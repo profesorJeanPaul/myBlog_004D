@@ -7,7 +7,10 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-        <h1>{{ post.title }}</h1>
+        <h1>
+            {{ post.title }}
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        </h1>
         <p>{{ post.text|linebreaksbr }}</p>
         <p>Autor: {{ post.author|linebreaksbr }}</p>
     </div>
